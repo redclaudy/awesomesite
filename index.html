@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>waov² (@redclaudy)</title>
+  <link rel="stylesheet" href="css/win98.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <div class="bevel-outset" id="main-window">
+    
+    <div class="titlebar" id="window-drag-handle">
+      <svg class="titlebar-icon" viewBox="0 0 16 16">
+        <rect width="14" height="12" x="1" y="2" fill="#ffd040"/>
+        <path fill="#ffffff" d="M3 5h10v7H3z"/>
+        <path fill="#000080" d="M5 7h6v1H5zm0 2h4v1H5z"/>
+      </svg>
+      <span class="titlebar-text">waov² (@redclaudy)</span>
+      <div class="titlebar-controls">
+        <button class="ctrl-btn" title="Reset Position" id="btn-center">_</button>
+        <button class="ctrl-btn" title="Maximize / Restore" id="btn-maximize">□</button>
+        <button class="ctrl-btn" title="Close / Reload" id="btn-close">✕</button>
+      </div>
+    </div>
+
+    <div class="menubar">
+      <span class="menu-btn" data-target="tab-about">Home</span>
+      <span class="menu-btn" data-target="tab-projects">Projects</span>
+      <span class="menu-btn" data-target="tab-blog">Dev Notes</span>
+      <span class="menu-btn" data-target="tab-guestbook">Guestbook</span>
+      <span class="menu-btn" id="btn-toggle-theme">Toggle BG</span>
+      <a href="https://github.com/redclaudy" target="_blank" class="menu-btn menu-link">GitHub ↗</a>
+    </div>
+
+    <div class="tabs-bar">
+      <button class="tab-btn active" data-tab="tab-about" id="btn-tab-about">About Me</button>
+      <button class="tab-btn" data-tab="tab-projects" id="btn-tab-projects">Projects</button>
+      <button class="tab-btn" data-tab="tab-blog" id="btn-tab-blog">Dev Notes</button>
+      <button class="tab-btn" data-tab="tab-guestbook" id="btn-tab-guestbook">Guestbook</button>
+    </div>
+
+    <div class="window-content bevel-inset">
+
+      <section class="tab-panel active" id="tab-about">
+        <div class="profile-card bevel-outset">
+          <div class="avatar-box bevel-inset">
+            <img src="https://avatars.githubusercontent.com/u/80118986?v=4" alt="waov² avatar" class="avatar-img" />
+          </div>
+          <div class="profile-info">
+            <div class="profile-name">waov²</div>
+            <div class="profile-handle">@redclaudy on github</div>
+            <div class="profile-desc">
+              hey, i'm waov². i make random stuff
+            </div>
+            <div class="links-row">
+              <a href="https://github.com/redclaudy" target="_blank" class="win-btn">GitHub Profile</a>
+              <a href="https://github.com/redclaudy?tab=repositories" target="_blank" class="win-btn">Repositories</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-box bevel-outset">
+          <strong style="color: #000080;">quick info:</strong>
+          <ul class="stats-list">
+            <li><strong>handle:</strong> @redclaudy</li>
+            <li><strong>stuff:</strong> nothing currently</li>
+            <li><strong>status:</strong> busy</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-projects">
+        <p class="section-intro">
+          repos:
+        </p>
+
+        <div class="repo-card bevel-outset">
+          <div class="repo-header">
+            <div class="repo-title">mattsblog</div>
+            <a href="https://github.com/redclaudy/mattsblog" target="_blank" class="win-btn">Open Repo ↗</a>
+          </div>
+          <div class="repo-desc">
+            "very very very shitty ai site i made for smth"
+          </div>
+          <div class="repo-meta">
+            <span class="meta-tag"><span class="lang-badge"></span> HTML</span>
+            <span>• Public</span>
+          </div>
+        </div>
+
+        <div class="stats-box bevel-outset">
+          <p>other repos are on github</p>
+          <div style="margin-top: 6px;">
+            <a href="https://github.com/redclaudy" target="_blank" class="win-btn">@redclaudy on GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-panel" id="tab-blog">
+        <div class="panel-header">
+          <span>notes:</span>
+          <button class="win-btn" id="btn-add-note">+ New Note</button>
+        </div>
+
+        <div id="notes-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-guestbook">
+        <form class="gb-form bevel-outset" id="guestbook-form" onsubmit="return false;">
+          <label for="gb-name"><strong>Name:</strong></label>
+          <input type="text" id="gb-name" class="gb-input bevel-inset" placeholder="name" />
+          
+          <label for="gb-msg"><strong>Message:</strong></label>
+          <textarea id="gb-msg" class="gb-input bevel-inset" placeholder="say something..."></textarea>
+          
+          <button type="submit" class="win-btn" id="btn-submit-gb">Sign Guestbook</button>
+        </form>
+
+        <div class="gb-list bevel-inset" id="gb-entries"></div>
+      </section>
+
+    </div>
+
+    <div class="statusbar">
+      <div class="status-cell" id="status-text">hi</div>
+      <div class="status-cell" id="status-clock">12:00 PM</div>
+    </div>
+
+  </div>
+
+  <script src="js/window.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/guestbook.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
